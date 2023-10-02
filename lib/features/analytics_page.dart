@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class AnalyticsPage extends StatelessWidget {
@@ -9,7 +7,7 @@ class AnalyticsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFFDFAF4),
+      backgroundColor: const Color(0xFFFDFAF4),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
@@ -53,7 +51,7 @@ class AnalyticsPage extends StatelessWidget {
             height: screenSize.height * 0.8,
             width: screenSize.width * 0.95,
             child: ListView(
-              children: [
+              children: const [
                 ItemCard(
                   itemName: "Cabbage",
                   imagePath: "assets/images/cabbage.png",
@@ -126,7 +124,7 @@ class ItemCard extends Card {
   final double oneWeekAveragePrice;
   final double oneWeekLowPrice;
 
-  ItemCard({
+  const ItemCard({
     super.key,
     required this.itemName,
     required this.imagePath,
@@ -171,7 +169,7 @@ class ItemCard extends Card {
               Table(
                 columnWidths: <int, TableColumnWidth>{
                   0: FixedColumnWidth(screenSize.width * 0.35),
-                  1: IntrinsicColumnWidth(flex: 1),
+                  1: const IntrinsicColumnWidth(flex: 1),
                 },
                 children: <TableRow>[
                   TableRow(
@@ -191,7 +189,7 @@ class ItemCard extends Card {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: Text("Current Price:"),
+                        child: const Text("Current Price:"),
                       ),
                       Text("₱ $currentPrice/kg"),
                     ],
@@ -200,7 +198,7 @@ class ItemCard extends Card {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: Text("1 Week Avg:"),
+                        child: const Text("1 Week Avg:"),
                       ),
                       Text("₱ $oneWeekAveragePrice/kg"),
                     ],
@@ -209,7 +207,7 @@ class ItemCard extends Card {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: Text("1 Week Low:"),
+                        child: const Text("1 Week Low:"),
                       ),
                       Text("₱ $oneWeekLowPrice/kg"),
                     ],
