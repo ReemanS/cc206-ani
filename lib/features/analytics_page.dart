@@ -117,7 +117,7 @@ class AnalyticsPage extends StatelessWidget {
   }
 }
 
-class ItemCard extends Card {
+class ItemCard extends StatelessWidget {
   final String itemName;
   final String imagePath;
   final double currentPrice;
