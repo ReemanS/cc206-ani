@@ -34,10 +34,15 @@ class Marketplace extends StatelessWidget{
               icon: const Icon(Icons.shopping_basket, color: Colors.black, size: 30.0,
               ), 
               onPressed: () {},
+            
             ),
+          SizedBox(
+            width: 28,
+          )      
           ],
+          
         ),
-
+        
         body: Column(
         
         children: [
@@ -93,103 +98,71 @@ class Marketplace extends StatelessWidget{
           child: SingleChildScrollView(
            child: Column(
                     children: [
-                      const SizedBox(height: 41),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
                             child: BuildItemBox("onion", "Onion"),
                           ),
                           SizedBox(
-                            height: 40,
-                            width: 180,
-                            child: BuildItemBox("cucumber", "Cucumber"),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 160), // Add spacing between the two rows
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
                             child: BuildItemBox("rice", "Rice"),
                           ),
-                          SizedBox(
-                            height: 40,
-                            width: 180,
-                            child: BuildItemBox("carrots", "Carrots"),
-                          ),
                         ],
                       ),
-                      const SizedBox(height: 160), // Add spacing between the two rows
+                      const SizedBox(height: 0), // Add spacing between the two rows
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("cabbage", "Cabbage"),
+                            child: BuildItemBox("cucumber", "cucumber"),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("potato", "Potato"),
+                            child: BuildItemBox("cabbage", "cabbage"),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 160), // Add spacing between the two rows
+                      const SizedBox(height: 0), // Add spacing between the two rows
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("tomato", "Tomato"),
+                            child: BuildItemBox("garlic", "garlic"),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("garlic", "Garlic"),
+                            child: BuildItemBox("tomato", "tomato"),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 160), // Add spacing between the two rows
+                      const SizedBox(height: 0), // Add spacing between the two rows
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("rice", "Rice"),
+                            child: BuildItemBox("potato", "potato"),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 200,
                             width: 180,
-                            child: BuildItemBox("carrots", "Carrots"),
+                            child: BuildItemBox("carrots", "carrots"),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 160), // Add spacing between the two rows
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 40,
-                            width: 180,
-                            child: BuildItemBox("rice", "Rice"),
-                          ),
-                          SizedBox(
-                            height: 40,
-                            width: 180,
-                            child: BuildItemBox("carrots", "Carrots"),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 170),
+                      const SizedBox(height: 0),
                     ],
                   ),
             ),
@@ -242,12 +215,12 @@ class ItemCard extends StatelessWidget {
         splashColor: Colors.green,
         child: Container(
           height: 170,
-          padding: const EdgeInsets.all(18),
+          padding: const EdgeInsets.all(20),
           child: Row(
             children: [
               SizedBox(
                 height: 130,
-                width: 126,
+                width: 130,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Container(
