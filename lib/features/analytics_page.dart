@@ -13,10 +13,17 @@ class AnalyticsPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFDFAF4),
       appBar: AppBar(
         bottom: const TabBar(
+          indicatorColor: Colors.green,
           padding: EdgeInsets.only(bottom: 10),
           tabs: [
-            Tab(text: "Fruits"),
-            Tab(text: "Vegetables"),
+            Tab(
+              child: Text("Fruits",
+                  style: TextStyle(fontFamily: "Poppins", color: Colors.black)),
+            ),
+            Tab(
+              child: Text("Vegetables",
+                  style: TextStyle(fontFamily: "Poppins", color: Colors.black)),
+            ),
           ],
         ),
         backgroundColor: Colors.transparent,
@@ -35,7 +42,10 @@ class AnalyticsPage extends StatelessWidget {
             const SizedBox(width: 5),
             const Text(
               "Analytics",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -48,6 +58,7 @@ class AnalyticsPage extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Search",
+                  hintStyle: const TextStyle(fontFamily: "Poppins"),
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
@@ -133,7 +144,9 @@ class ItemCard extends StatelessWidget {
                         child: Text(
                           itemName,
                           style: const TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 20,
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(),
@@ -143,27 +156,33 @@ class ItemCard extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: const Text("Current Price:"),
+                        child: const Text("Current Price:",
+                            style: TextStyle(fontFamily: "Poppins")),
                       ),
-                      Text("₱ $currentPrice/kg"),
+                      Text("₱ $currentPrice/kg",
+                          style: const TextStyle(fontFamily: "Poppins")),
                     ],
                   ),
                   TableRow(
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: const Text("1 Week Avg:"),
+                        child: const Text("1 Week Avg:",
+                            style: TextStyle(fontFamily: "Poppins")),
                       ),
-                      Text("₱ $oneWeekAveragePrice/kg"),
+                      Text("₱ $oneWeekAveragePrice/kg",
+                          style: const TextStyle(fontFamily: "Poppins")),
                     ],
                   ),
                   TableRow(
                     children: [
                       Container(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: const Text("1 Week Low:"),
+                        child: const Text("1 Week Low:",
+                            style: TextStyle(fontFamily: "Poppins")),
                       ),
-                      Text("₱ $oneWeekLowPrice/kg"),
+                      Text("₱ $oneWeekLowPrice/kg",
+                          style: const TextStyle(fontFamily: "Poppins")),
                     ],
                   ),
                 ],
