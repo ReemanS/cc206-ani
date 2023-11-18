@@ -14,9 +14,9 @@ class Fertilizer extends StatelessWidget {
           
          Center(
             child: SizedBox(
-              width: screenSize.width * 0.9,
+              width: screenSize.width * 0.91,
               child: Padding(
-                padding: const EdgeInsets.only(top:16 ),
+                padding: const EdgeInsets.only(top:20),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search",
@@ -31,8 +31,8 @@ class Fertilizer extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           SizedBox(
-            height: screenSize.height * 0.8,
-            width: screenSize.width * 0.09,
+            height: screenSize.height * 0.4,
+            width: screenSize.width * 0.525,
 
           child: Row(
             children: [
