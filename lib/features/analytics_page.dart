@@ -1,4 +1,7 @@
+import 'package:cc206_ani/components/fruits_list.dart';
 import 'package:flutter/material.dart';
+
+import '../components/vegetables_list.dart';
 
 class AnalyticsPage extends StatelessWidget {
   const AnalyticsPage({super.key});
@@ -9,6 +12,13 @@ class AnalyticsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFDFAF4),
       appBar: AppBar(
+        bottom: const TabBar(
+          padding: EdgeInsets.only(bottom: 10),
+          tabs: [
+            Tab(text: "Fruits"),
+            Tab(text: "Vegetables"),
+          ],
+        ),
         backgroundColor: Colors.transparent,
         centerTitle: true,
         toolbarHeight: 80,
@@ -47,67 +57,11 @@ class AnalyticsPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          SizedBox(
-            height: screenSize.height * 0.8,
-            width: screenSize.width * 0.95,
-            child: ListView(
-              children: const [
-                ItemCard(
-                  itemName: "Cabbage",
-                  imagePath: "assets/images/cabbage.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
-                ItemCard(
-                  itemName: "Carrots",
-                  imagePath: "assets/images/carrot.png",
-                  currentPrice: 146,
-                  oneWeekAveragePrice: 147.5,
-                  oneWeekLowPrice: 140.2,
-                ),
-                ItemCard(
-                  itemName: "Garlic",
-                  imagePath: "assets/images/garlic.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
-                ItemCard(
-                  itemName: "Potato",
-                  imagePath: "assets/images/potato.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
-                ItemCard(
-                  itemName: "Red Onlin",
-                  imagePath: "assets/images/red-onion.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
-                ItemCard(
-                  itemName: "Cabbage",
-                  imagePath: "assets/images/cabbage.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
-                ItemCard(
-                  itemName: "Carrots",
-                  imagePath: "assets/images/carrot.png",
-                  currentPrice: 146,
-                  oneWeekAveragePrice: 147.5,
-                  oneWeekLowPrice: 140.2,
-                ),
-                ItemCard(
-                  itemName: "Garlic",
-                  imagePath: "assets/images/garlic.png",
-                  currentPrice: 150,
-                  oneWeekAveragePrice: 167.4,
-                  oneWeekLowPrice: 131.4,
-                ),
+          const Expanded(
+            child: TabBarView(
+              children: [
+                FruitsList(),
+                VegetablesList(),
               ],
             ),
           ),

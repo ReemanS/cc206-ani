@@ -12,7 +12,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Ani",
-      home: AnalyticsPage(),
+      home: DefaultTabController(
+        length: 2,
+        child: AnalyticsPage(),
+      ),
     );
   }
 }
