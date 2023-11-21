@@ -1,11 +1,9 @@
 name: cc206_ani
 description: A new Flutter project.
 publish_to: "none"
-publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: ">=3.1.0 <4.0.0"
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
@@ -18,26 +16,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-  assets:
-    - assets/images/app-logo.png
-    - assets/images/apples.jpg
-    - assets/images/banana.png
-    - assets/images/cabbage.png
-    - assets/images/carrot.png
-    - assets/images/garlic.png
-    - assets/images/grapes.jpg
-    - assets/images/oranges.jpg
-    - assets/images/potato.png
-    - assets/images/red-onion.png
-    - assets/images/strawberry.jpg
-
-    - assets/fonts/Poppins-Regular.ttf
-    - assets/fonts/Poppins-italic.ttf
-    - assets/fonts/Poppins-Bold.ttf
-    - assets/fonts/Poppins-Bolditalic.ttf
-    - assets/fonts/Poppins-Light.ttf
-    - assets/fonts/Poppins-Lightitalic.ttf
-
   fonts:
     - family: Poppins
       fonts:
@@ -74,22 +52,4 @@ flutter:
     - assets/fonts/Poppins-Bolditalic.ttf
     - assets/fonts/Poppins-Light.ttf
     - assets/fonts/Poppins-Lightitalic.ttf
-
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-
-        - asset: assets/fonts/Poppins-italic.ttf
-          style: italic
-
-        - asset: assets/fonts/Poppins-Bold.ttf
-
-        - asset: assets/fonts/Poppins-Bolditalic.ttf
-          style: italic
-
-        - asset: assets/fonts/Poppins-Light.ttf
-
-        - asset: assets/fonts/Poppins-Lightitalic.ttf
-          style: italic
   uses-material-design: true

@@ -22,7 +22,15 @@ class _Marketplace_State extends State<Marketplace> {
             backgroundColor: Colors.transparent,
             centerTitle: true,
             toolbarHeight: 80,
-            leading: const Icon(Icons.chevron_left, color: Colors.black),
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black54,
+              ),
+            ),
             elevation: 0,
             title: Row(
               mainAxisSize: MainAxisSize.min,

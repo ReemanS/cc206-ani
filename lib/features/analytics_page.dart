@@ -9,74 +9,87 @@ class AnalyticsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: const Color(0xFFFDFAF4),
-      appBar: AppBar(
-        bottom: const TabBar(
-          indicatorColor: Colors.green,
-          padding: EdgeInsets.only(bottom: 10),
-          tabs: [
-            Tab(
-              child: Text("Fruits",
-                  style: TextStyle(fontFamily: "Poppins", color: Colors.black)),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: const Color(0xFFFDFAF4),
+        appBar: AppBar(
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black54,
             ),
-            Tab(
-              child: Text("Vegetables",
-                  style: TextStyle(fontFamily: "Poppins", color: Colors.black)),
-            ),
-          ],
+          ),
+          bottom: const TabBar(
+            indicatorColor: Colors.green,
+            padding: EdgeInsets.only(bottom: 10),
+            tabs: [
+              Tab(
+                child: Text("Fruits",
+                    style:
+                        TextStyle(fontFamily: "Poppins", color: Colors.black)),
+              ),
+              Tab(
+                child: Text("Vegetables",
+                    style:
+                        TextStyle(fontFamily: "Poppins", color: Colors.black)),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          toolbarHeight: 80,
+          elevation: 0,
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/app-logo.png",
+                width: 50,
+              ),
+              const SizedBox(width: 5),
+              const Text(
+                "Analytics",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        toolbarHeight: 80,
-        leading: const Icon(Icons.chevron_left, color: Colors.black),
-        elevation: 0,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: Column(
           children: [
-            Image.asset(
-              "assets/images/app-logo.png",
-              width: 50,
-            ),
-            const SizedBox(width: 5),
-            const Text(
-              "Analytics",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: "Poppins",
-                  fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ),
-      body: Column(
-        children: [
-          Center(
-            child: SizedBox(
-              width: screenSize.width * 0.9,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  hintStyle: const TextStyle(fontFamily: "Poppins"),
-                  prefixIcon: const Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+            Center(
+              child: SizedBox(
+                width: screenSize.width * 0.9,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Search",
+                    hintStyle: const TextStyle(fontFamily: "Poppins"),
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          const Expanded(
-            child: TabBarView(
-              children: [
-                FruitsList(),
-                VegetablesList(),
-              ],
+            const SizedBox(height: 12),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  FruitsList(),
+                  VegetablesList(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
