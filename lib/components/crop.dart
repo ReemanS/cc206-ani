@@ -8,8 +8,9 @@ class Crops extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      
       body: Column(
-        
+      
         children: [
           
          Center(
@@ -32,9 +33,11 @@ class Crops extends StatelessWidget {
           const SizedBox(height: 12),
           SizedBox(
             height: screenSize.height * 0.4,
-            width: screenSize.width * 0.525,
+          
 
           child: Row(
+                mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
             children: [
               
               BuildItemBox("carrot","Cabbage" ),
