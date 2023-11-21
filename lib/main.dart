@@ -2,11 +2,11 @@ import 'package:cc206_ani/features/analytics_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const AnalyticsMainApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class AnalyticsMainApp extends StatelessWidget {
+  const AnalyticsMainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
