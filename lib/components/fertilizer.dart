@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
 class Fertilizer extends StatelessWidget {
   const Fertilizer({super.key});
 
@@ -9,14 +8,12 @@ class Fertilizer extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
-        
         children: [
-          
-         Center(
+          Center(
             child: SizedBox(
               width: screenSize.width * 0.91,
               child: Padding(
-                padding: const EdgeInsets.only(top:20),
+                padding: const EdgeInsets.only(top: 20),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search",
@@ -32,38 +29,37 @@ class Fertilizer extends StatelessWidget {
           const SizedBox(height: 12),
           SizedBox(
             height: screenSize.height * 0.4,
-           
-
-          child: Row(
-                   mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              
-              BuildItemBox("carrot","Cabbage" ),
-              BuildItemBox("garlic","Cabbage" ),            
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                BuildItemBox("carrot", "Cabbage"),
+                BuildItemBox("garlic", "Cabbage"),
               ],
-          ),
-
-          
-         
-           
+            ),
           ),
         ],
       ),
-       
     );
   }
 
-  Column BuildItemBox(String image, String emName, ) {
-    return Column( children: [
-                 ItemCard(
-                itemName: "Cabbage",
-                imagePath: "assets/images/$image.png",
-              ),
-              
-              Text(emName),
-            ],     
-            );
+  Column BuildItemBox(String image, String emName) {
+    return Column(
+      children: [
+        ItemCard(
+          itemName: "Cabbage",
+          imagePath: "assets/images/$image.png",
+        ),
+        Text(
+          emName,
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -71,13 +67,11 @@ class ItemCard extends StatelessWidget {
   final String itemName;
   final String imagePath;
 
-
   const ItemCard({
-    super.key,
+    Key? key,
     required this.itemName,
     required this.imagePath,
-  
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -117,8 +111,7 @@ class ItemCard extends StatelessWidget {
                   0: FixedColumnWidth(screenSize.width * 0.38),
                   1: const IntrinsicColumnWidth(flex: 1),
                 },
-               
-              )
+              ),
             ],
           ),
         ),
