@@ -30,7 +30,7 @@ class _Marketplace_State extends State<Marketplace>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/app-logo.png",
+                      "assets/images/app-logo.png",
                       width: 50,
                     ),
                     const SizedBox(width: 5),
