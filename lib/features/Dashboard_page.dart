@@ -2,6 +2,77 @@ import 'package:flutter/material.dart';
 import 'marketplace.dart';
 import 'analytics_page.dart';
 
+
+class Clouds extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      
+      children: [
+        // Left column with an image
+        Column(
+  mainAxisAlignment: MainAxisAlignment.start,
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 15),
+      child: Image.network(
+        'https://cdn-icons-png.flaticon.com/128/414/414825.png',
+        width: 100,
+        height: 100,
+        fit: BoxFit.cover,
+      ),
+    ),
+  ],
+),
+        
+        // Center column with two rows of text
+        Column(
+          mainAxisSize: MainAxisSize.min,
+           mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '11:11',
+              style: TextStyle(
+                fontSize: 35,
+                fontFamily: 'Readex Pro',
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              'Mon, May 29',
+              style: TextStyle(
+                fontSize: 18,
+                fontFamily: 'Readex Pro',
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+        
+        // Right column with one row of text
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'PM',
+              style: TextStyle(
+                fontSize: 18,
+                fontFamily: 'Readex Pro',
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
 
@@ -59,7 +130,7 @@ class Dashboard extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 0, 0, 0),
               ),
               child: Text('Right Drawer Header'),
             ),
@@ -79,84 +150,301 @@ class Dashboard extends StatelessWidget {
           ],
         ),
       ),
+
+
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 400,
-              height: 250,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 51, 243, 33),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-    Column(
+  child: Column(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+     Padding(
+   padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+  child: Container(
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(167, 76, 175, 79),
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: Color.fromARGB(255, 70, 184, 60),
+        width: 3,
+      ),
+    ),
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Good Morning',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Text and Cloud widget on the left side
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Good Morning',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 1), // Adjust the vertical spacing
+                  Row(
+                    children: [
+                      Text(
+                        'Elon Mah',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              // Empty container for spacing or any other widget you may want to add
+              Container(width: 10),
+              // Image on the right side
+              Image.network(
+                'https://cdn-icons-png.flaticon.com/128/1149/1149378.png',
+                width: 50,
+                height: 50,
+              ),
+            ],
           ),
         ),
+        // Clouds widget below the second row
+        Center(
+  child: Padding(
+    padding: const EdgeInsets.all(10.0),
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: InkWell(
+        onTap: () {
+          // Add your interactive behavior here
+        },
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+          child: Clouds(),
+        ),
+      ),
+    ),
+  ),
+),
+      ],
+      
+    ),
+    
+  ),
+  
+),
+
+
+
+
+
+      const SizedBox(height: 20),
+
+      // First Pair - Dashboard
+      Container(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+         InkWell(
+  onTap: () {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => Marketplace()));
+  },
+  child: Container(
+    width: 100,
+    height: 120, // Increased height to accommodate both image and text
+    decoration: BoxDecoration(
+       color: const Color.fromARGB(166, 76, 175, 79),
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: Color.fromARGB(255, 70, 184, 60),
+        width: 3,
+      ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          'assets/images/Market.png',
+          width: 50,
+          height: 50,
+        ),
+        SizedBox(height: 5),
         Text(
-          'Elon Mahh',
+          'Market Place',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 48,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
       ],
     ),
-    const SizedBox(width: 8), // Adjust the spacing between the image and text
-    Image.network(
-      'https://cdn-icons-png.flaticon.com/128/1149/1149378.png',
-      width: 50,
-      height: 50,
-    ),
-  ],
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
+  ),
+),
+          SizedBox(width: 10),
 
-            // First Pair - Dashboard
-            ElevatedButton(
-              style: ButtonStyle(
-                padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-              ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Marketplace()));
-              },
-              child: const Text("Dashboard"),
-            ),
-            const SizedBox(height: 20),
 
-            // Second Pair - Analytics Page
-            ElevatedButton(
-              style: ButtonStyle(
-                padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-              ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsPage()));
-              },
-              child: const Text("Analytics Page"),
-            ),
-          ],
-        ),
+        InkWell(
+  onTap: () {
+   
+  },
+  child: Container(
+    width: 100,
+    height: 120, 
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(166, 76, 175, 79),
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: Color.fromARGB(255, 70, 184, 60),
+        width: 3,
       ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          'assets/images/Chat.png',
+          width: 50,
+          height: 50,
+        ),
+        SizedBox(height: 5),
+        Text(
+          'Chat Bot',
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+
+
+        ],
+      ),
+      SizedBox(height: 10),
+
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+           InkWell(
+  onTap: () {
+
+  },
+  child: Container(
+    width: 100,
+    height: 120, // Increased height to accommodate both image and text
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(166, 76, 175, 79),
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: Color.fromARGB(255, 70, 184, 60),
+        width: 3,
+      ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          'assets/images/Journal.png',
+          width: 50,
+          height: 50,
+        ),
+        SizedBox(height: 5),
+        Text(
+          'Journal',
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+          SizedBox(width: 10),
+
+
+           InkWell(
+  onTap: () {
+Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsPage()));
+  },
+  child: Container(
+    width: 100,
+    height: 120, // Increased height to accommodate both image and text
+    decoration: BoxDecoration(
+       color: const Color.fromARGB(166, 76, 175, 79),
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: Color.fromARGB(255, 70, 184, 60),
+        width: 3,
+      ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          'assets/images/Analytics.png',
+          width: 50,
+          height: 50,
+        ),
+        SizedBox(height: 5),
+        Text(
+          'Analytics',
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+        ],
+      ),
+    ],
+  ),
+),
+      // ElevatedButton(
+      //   style: ButtonStyle(
+      //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+      //   ),
+      //   onPressed: () {
+      //     Navigator.push(context, MaterialPageRoute(builder: (context) => Marketplace()));
+      //   },
+      //   child: const Text("Dashboard"),
+      // ),
+      // const SizedBox(height: 20),
+
+      // // Second Pair - Analytics Page
+      // ElevatedButton(
+      //   style: ButtonStyle(
+      //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+      //   ),
+      //   onPressed: () {
+      //     Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsPage()));
+      //   },
+      //   child: const Text("Analytics Page"),
+      // ),
+    ],
+  ),
+),
+
     );
   }
 }

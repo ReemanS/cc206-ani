@@ -45,6 +45,11 @@ flutter:
     - assets/images/potato.png
     - assets/images/red-onion.png
     - assets/images/strawberry.jpg
+    - assets/images/Market.png
+    - assets/images/Journal.png
+    - assets/images/Chat.png
+    - assets/images/Analytics.png
+
 
     - assets/fonts/Poppins-Regular.ttf
     - assets/fonts/Poppins-italic.ttf
