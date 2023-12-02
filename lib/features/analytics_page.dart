@@ -24,7 +24,7 @@ class AnalyticsPage extends StatelessWidget {
             ),
           ),
           bottom: const TabBar(
-            indicatorColor: Colors.green,
+            indicatorColor: Color.fromRGBO(76, 175, 80, 1),
             padding: EdgeInsets.only(bottom: 10),
             tabs: [
               Tab(
