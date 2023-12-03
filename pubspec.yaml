@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -49,7 +50,6 @@ flutter:
     - assets/images/Journal.png
     - assets/images/Chat.png
     - assets/images/Analytics.png
-
 
     - assets/fonts/Poppins-Regular.ttf
     - assets/fonts/Poppins-italic.ttf
