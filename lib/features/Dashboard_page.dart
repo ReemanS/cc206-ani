@@ -110,13 +110,13 @@ class _DashboardState extends State<Dashboard> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+                  padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(167, 76, 175, 79),
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
-                        color: Color.fromARGB(255, 70, 184, 60),
+                        color: const Color.fromARGB(255, 70, 184, 60),
                         width: 3,
                       ),
                     ),
@@ -208,7 +208,7 @@ class _DashboardState extends State<Dashboard> {
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -225,7 +225,7 @@ class _DashboardState extends State<Dashboard> {
                                 'Market Place',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
@@ -233,7 +233,25 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 200,
+                                child: const Center(
+                                  child: Text(
+                                    'Sorry! This feature is not available yet.',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontFamily: "Poppins",
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Container(
                           width: 100,
                           height: 120,
@@ -241,7 +259,7 @@ class _DashboardState extends State<Dashboard> {
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -253,12 +271,12 @@ class _DashboardState extends State<Dashboard> {
                                 width: 100,
                                 height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Chat Bot',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
@@ -266,16 +284,33 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 200,
+                                child: const Center(
+                                  child: Text(
+                                    'Sorry! This feature is not available yet.',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontFamily: "Poppins",
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Container(
                           width: 100,
-                          height:
-                              120, // Increased height to accommodate both image and text
+                          height: 120,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -287,12 +322,12 @@ class _DashboardState extends State<Dashboard> {
                                 width: 100,
                                 height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Journal',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
@@ -301,20 +336,16 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AnalyticsPage()));
+                          Navigator.pushNamed(context, '/analytics');
                         },
                         child: Container(
                           width: 100,
-                          height:
-                              120, // Increased height to accommodate both image and text
+                          height: 120,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -326,12 +357,12 @@ class _DashboardState extends State<Dashboard> {
                                 width: 100,
                                 height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Analytics',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
