@@ -39,8 +39,13 @@ class _CloudsState extends State<Clouds> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          color: Colors.grey,
+          width: 3,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
