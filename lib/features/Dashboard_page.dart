@@ -103,7 +103,7 @@ class Dashboard extends StatelessWidget {
             ),
             const SizedBox(width: 5),
             const Text(
-              "Marketplace",
+              "Dashboard",
               style: TextStyle(
                 fontFamily: 'Poppins',
                 color: Colors.black,
