@@ -1,6 +1,7 @@
 import 'package:cc206_ani/features/Dashboard_page.dart';
 import 'package:cc206_ani/features/analytics_page.dart';
 import 'package:cc206_ani/features/marketplace.dart';
+import 'package:cc206_ani/features/chat_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => const Dashboard(),
         '/analytics': (context) => const AnalyticsPage(),
         '/marketplace': (context) => const Marketplace(),
+        '/chatbot': (context) => const Chatbot(),
       },
     );
   }

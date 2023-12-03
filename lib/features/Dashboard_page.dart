@@ -2,6 +2,7 @@ import 'package:cc206_ani/components/clouds.dart';
 import 'package:flutter/material.dart';
 import 'marketplace.dart';
 import 'analytics_page.dart';
+import 'chat_page.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -97,6 +98,14 @@ class _DashboardState extends State<Dashboard> {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/analytics');
+              },
+            ),
+            ListTile(
+              title: const Text('Chat Bot',
+                  style: TextStyle(fontFamily: "Poppins")),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/chatbot');
               },
             ),
           ],
@@ -234,23 +243,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       InkWell(
                         onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Container(
-                                height: 200,
-                                child: const Center(
-                                  child: Text(
-                                    'Sorry! This feature is not available yet.',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontFamily: "Poppins",
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          );
+                          Navigator.pushNamed((context), '/chatbot');
                         },
                         child: Container(
                           width: 100,
