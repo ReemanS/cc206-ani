@@ -8,61 +8,57 @@ class Crops extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Center(
-            child: SizedBox(
-              width: screenSize.width * 0.91,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+        child: Column(
+          children: [
+            Center(
+              child: SizedBox(
+                width: screenSize.width * 0.91,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Search",
+                      prefixIcon: const Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          SizedBox(
-            height: screenSize.height * 0.4,
-            child: Column(
-              children: [ Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
+            const SizedBox(height: 12),
+            Column(
               children: [
-                BuildItemBox("carrot", "Cabbage"),
-                BuildItemBox("garlic", "Garlic"),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BuildItemBox("red-onion", "Red Onion"),
-                BuildItemBox("banana", "Banana"),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BuildItemBox("cabbage", "Cabbage"),
-               BuildItemBox("potato", "Potato"), 
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BuildItemBox("carrot", "Cabbage"),
+                    BuildItemBox("garlic", "Garlic"),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BuildItemBox("red-onion", "Red Onion"),
+                    BuildItemBox("banana", "Banana"),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BuildItemBox("cabbage", "Cabbage"),
+                    BuildItemBox("potato", "Potato"),
+                  ],
+                ),
               ],
             ),
           ],
-         )
-            
-          ),
-        ],
+        ),
       ),
-      ),
-      
     );
   }
 

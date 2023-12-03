@@ -52,7 +52,7 @@ class Fertilizer extends StatelessWidget {
         ),
         Text(
           emName,
-          style: TextStyle(
+          style: const TextStyle(
             fontFamily: 'Poppins',
             fontSize: 16,
             fontWeight: FontWeight.bold,
