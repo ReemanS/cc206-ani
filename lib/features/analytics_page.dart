@@ -55,9 +55,10 @@ class AnalyticsPage extends StatelessWidget {
               const Text(
                 "Analytics",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.bold),
+                  fontFamily: 'Poppins',
+                  color: Colors.black,
+                  fontSize: 25,
+                ),
               ),
             ],
           ),
