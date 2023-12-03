@@ -10,6 +10,7 @@ class Marketplace extends StatefulWidget {
   State<Marketplace> createState() => _Marketplace_State();
 }
 
+// ignore: camel_case_types
 class _Marketplace_State extends State<Marketplace> {
   @override
   Widget build(BuildContext context) {

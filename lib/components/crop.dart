@@ -7,7 +7,8 @@ class Crops extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+          child: Column(
         children: [
           Center(
             child: SizedBox(
@@ -29,7 +30,8 @@ class Crops extends StatelessWidget {
           const SizedBox(height: 12),
           SizedBox(
             height: screenSize.height * 0.4,
-            child: Row(
+            child: Column(
+              children: [ Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -37,9 +39,30 @@ class Crops extends StatelessWidget {
                 BuildItemBox("garlic", "Garlic"),
               ],
             ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                BuildItemBox("red-onion", "Red Onion"),
+                BuildItemBox("banana", "Banana"),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                BuildItemBox("cabbage", "Cabbage"),
+               BuildItemBox("potato", "Potato"), 
+              ],
+            ),
+          ],
+         )
+            
           ),
         ],
       ),
+      ),
+      
     );
   }
 
@@ -52,7 +75,7 @@ class Crops extends StatelessWidget {
         ),
         Text(
           emName,
-          style: TextStyle(
+          style: const TextStyle(
             fontFamily: 'Poppins',
             fontSize: 16,
             fontWeight: FontWeight.bold,
