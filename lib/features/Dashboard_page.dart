@@ -99,125 +99,116 @@ class _DashboardState extends State<Dashboard> {
                 Navigator.pushNamed(context, '/analytics');
               },
             ),
-            // Add more ListTile widgets for additional items
           ],
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: ListView(
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(167, 76, 175, 79),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Color.fromARGB(255, 70, 184, 60),
-                    width: 3,
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // Text and Cloud widget on the left side
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(167, 76, 175, 79),
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 70, 184, 60),
+                        width: 3,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Good Morning',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 1), // Adjust the vertical spacing
-                              Row(
+                              // Text and Cloud widget on the left side
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Elon Mah',
+                                    'Good Morning,',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 48,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontFamily: "Poppins",
                                     ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Elon Mah',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 48,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: "Poppins",
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
+                              Container(width: 10),
+                              Image.network(
+                                'https://cdn-icons-png.flaticon.com/128/1149/1149378.png',
+                                width: 50,
+                                height: 50,
+                              ),
                             ],
                           ),
-                          // Empty container for spacing or any other widget you may want to add
-                          Container(width: 10),
-                          // Image on the right side
-                          Image.network(
-                            'https://cdn-icons-png.flaticon.com/128/1149/1149378.png',
-                            width: 50,
-                            height: 50,
-                          ),
-                        ],
-                      ),
-                    ),
-                    // Clouds widget below the second row
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: InkWell(
-                            onTap: () {
-                              // Add your interactive behavior here
-                            },
-                            child: const Padding(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              child: Clouds(),
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: InkWell(
+                                onTap: () {},
+                                child: const Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                  child: Clouds(),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
 
-            const SizedBox(height: 20),
+                const SizedBox(height: 10),
 
-            // First Pair - Dashboard
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    shrinkWrap: true,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Marketplace()));
+                          Navigator.pushNamed((context), '/marketplace');
                         },
                         child: Container(
                           width: 100,
-                          height:
-                              120, // Increased height to accommodate both image and text
+                          height: 120,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -226,24 +217,41 @@ class _DashboardState extends State<Dashboard> {
                             children: [
                               Image.asset(
                                 'assets/images/Market.png',
-                                width: 50,
-                                height: 50,
+                                width: 100,
+                                height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Market Place',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 200,
+                                child: const Center(
+                                  child: Text(
+                                    'Sorry! This feature is not available yet.',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontFamily: "Poppins",
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Container(
                           width: 100,
                           height: 120,
@@ -251,7 +259,7 @@ class _DashboardState extends State<Dashboard> {
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -260,38 +268,49 @@ class _DashboardState extends State<Dashboard> {
                             children: [
                               Image.asset(
                                 'assets/images/Chat.png',
-                                width: 50,
-                                height: 50,
+                                width: 100,
+                                height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Chat Bot',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 200,
+                                child: const Center(
+                                  child: Text(
+                                    'Sorry! This feature is not available yet.',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontFamily: "Poppins",
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Container(
                           width: 100,
-                          height:
-                              120, // Increased height to accommodate both image and text
+                          height: 120,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -300,38 +319,33 @@ class _DashboardState extends State<Dashboard> {
                             children: [
                               Image.asset(
                                 'assets/images/Journal.png',
-                                width: 50,
-                                height: 50,
+                                width: 100,
+                                height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Journal',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AnalyticsPage()));
+                          Navigator.pushNamed(context, '/analytics');
                         },
                         child: Container(
                           width: 100,
-                          height:
-                              120, // Increased height to accommodate both image and text
+                          height: 120,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(166, 76, 175, 79),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Color.fromARGB(255, 70, 184, 60),
+                              color: const Color.fromARGB(255, 70, 184, 60),
                               width: 3,
                             ),
                           ),
@@ -340,15 +354,15 @@ class _DashboardState extends State<Dashboard> {
                             children: [
                               Image.asset(
                                 'assets/images/Analytics.png',
-                                width: 50,
-                                height: 50,
+                                width: 100,
+                                height: 100,
                               ),
-                              SizedBox(height: 5),
-                              Text(
+                              const SizedBox(height: 5),
+                              const Text(
                                 'Analytics',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: "Poppins",
                                 ),
                               ),
                             ],
@@ -357,30 +371,192 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            // ElevatedButton(
-            //   style: ButtonStyle(
-            //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-            //   ),
-            //   onPressed: () {
-            //     Navigator.push(context, MaterialPageRoute(builder: (context) => Marketplace()));
-            //   },
-            //   child: const Text("Dashboard"),
-            // ),
-            // const SizedBox(height: 20),
+                ),
 
-            // // Second Pair - Analytics Page
-            // ElevatedButton(
-            //   style: ButtonStyle(
-            //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-            //   ),
-            //   onPressed: () {
-            //     Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsPage()));
-            //   },
-            //   child: const Text("Analytics Page"),
-            // ),
+                // Container(
+                //   child: Column(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: [
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           InkWell(
+                //             onTap: () {
+                //               Navigator.pushNamed((context), '/marketplace');
+                //             },
+                //             child: Container(
+                //               width: 100,
+                //               height: 120,
+                //               decoration: BoxDecoration(
+                //                 color: const Color.fromARGB(166, 76, 175, 79),
+                //                 borderRadius: BorderRadius.circular(15),
+                //                 border: Border.all(
+                //                   color: Color.fromARGB(255, 70, 184, 60),
+                //                   width: 3,
+                //                 ),
+                //               ),
+                //               child: Column(
+                //                 mainAxisAlignment: MainAxisAlignment.center,
+                //                 children: [
+                //                   Image.asset(
+                //                     'assets/images/Market.png',
+                //                     width: 50,
+                //                     height: 50,
+                //                   ),
+                //                   const SizedBox(height: 5),
+                //                   const Text(
+                //                     'Market Place',
+                //                     style: TextStyle(
+                //                       fontSize: 12,
+                //                       fontWeight: FontWeight.bold,
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           ),
+                //           SizedBox(width: 10),
+                //           InkWell(
+                //             onTap: () {},
+                //             child: Container(
+                //               width: 100,
+                //               height: 120,
+                //               decoration: BoxDecoration(
+                //                 color: const Color.fromARGB(166, 76, 175, 79),
+                //                 borderRadius: BorderRadius.circular(15),
+                //                 border: Border.all(
+                //                   color: Color.fromARGB(255, 70, 184, 60),
+                //                   width: 3,
+                //                 ),
+                //               ),
+                //               child: Column(
+                //                 mainAxisAlignment: MainAxisAlignment.center,
+                //                 children: [
+                //                   Image.asset(
+                //                     'assets/images/Chat.png',
+                //                     width: 50,
+                //                     height: 50,
+                //                   ),
+                //                   SizedBox(height: 5),
+                //                   Text(
+                //                     'Chat Bot',
+                //                     style: TextStyle(
+                //                       fontSize: 12,
+                //                       fontWeight: FontWeight.bold,
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //       SizedBox(height: 10),
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           InkWell(
+                //             onTap: () {},
+                //             child: Container(
+                //               width: 100,
+                //               height:
+                //                   120, // Increased height to accommodate both image and text
+                //               decoration: BoxDecoration(
+                //                 color: const Color.fromARGB(166, 76, 175, 79),
+                //                 borderRadius: BorderRadius.circular(15),
+                //                 border: Border.all(
+                //                   color: Color.fromARGB(255, 70, 184, 60),
+                //                   width: 3,
+                //                 ),
+                //               ),
+                //               child: Column(
+                //                 mainAxisAlignment: MainAxisAlignment.center,
+                //                 children: [
+                //                   Image.asset(
+                //                     'assets/images/Journal.png',
+                //                     width: 50,
+                //                     height: 50,
+                //                   ),
+                //                   SizedBox(height: 5),
+                //                   Text(
+                //                     'Journal',
+                //                     style: TextStyle(
+                //                       fontSize: 12,
+                //                       fontWeight: FontWeight.bold,
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           ),
+                //           SizedBox(width: 10),
+                //           InkWell(
+                //             onTap: () {
+                //               Navigator.push(
+                //                   context,
+                //                   MaterialPageRoute(
+                //                       builder: (context) => AnalyticsPage()));
+                //             },
+                //             child: Container(
+                //               width: 100,
+                //               height:
+                //                   120, // Increased height to accommodate both image and text
+                //               decoration: BoxDecoration(
+                //                 color: const Color.fromARGB(166, 76, 175, 79),
+                //                 borderRadius: BorderRadius.circular(15),
+                //                 border: Border.all(
+                //                   color: Color.fromARGB(255, 70, 184, 60),
+                //                   width: 3,
+                //                 ),
+                //               ),
+                //               child: Column(
+                //                 mainAxisAlignment: MainAxisAlignment.center,
+                //                 children: [
+                //                   Image.asset(
+                //                     'assets/images/Analytics.png',
+                //                     width: 50,
+                //                     height: 50,
+                //                   ),
+                //                   SizedBox(height: 5),
+                //                   Text(
+                //                     'Analytics',
+                //                     style: TextStyle(
+                //                       fontSize: 12,
+                //                       fontWeight: FontWeight.bold,
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                // ElevatedButton(
+                //   style: ButtonStyle(
+                //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(context, MaterialPageRoute(builder: (context) => Marketplace()));
+                //   },
+                //   child: const Text("Dashboard"),
+                // ),
+                // const SizedBox(height: 20),
+
+                // // Second Pair - Analytics Page
+                // ElevatedButton(
+                //   style: ButtonStyle(
+                //     padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsPage()));
+                //   },
+                //   child: const Text("Analytics Page"),
+                // ),
+              ],
+            ),
           ],
         ),
       ),
