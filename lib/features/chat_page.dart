@@ -64,8 +64,9 @@ class _Chatbot_State extends State<Chatbot> {
         ),
         body: Column(
           children: [
-            Expanded(
-              child: Container(
+            Expanded (
+              child: Flexible(
+                child: Container(
                 margin: const EdgeInsets.all(3.0),
                 child: ListView.builder(
                   itemCount: _messages.length,
@@ -87,6 +88,9 @@ class _Chatbot_State extends State<Chatbot> {
                               bottom: 5.0,
                             ),
                             padding: const EdgeInsets.all(12.0),
+                            constraints: BoxConstraints(
+                              maxWidth: MediaQuery.of(context).size.width * 0.5,
+                            ),
                             decoration: BoxDecoration(
                               color: isSent ? Colors.green : Colors.white,
                               borderRadius: BorderRadius.circular(10.0),
@@ -99,6 +103,7 @@ class _Chatbot_State extends State<Chatbot> {
                               ),
                               textAlign:
                                   isSent ? TextAlign.right : TextAlign.left,
+                                  softWrap: true,
                             ),
                           ),
                           if (isSent)
@@ -114,6 +119,7 @@ class _Chatbot_State extends State<Chatbot> {
                     );
                   },
                 ),
+              ),
               ),
             ),
             Container(
