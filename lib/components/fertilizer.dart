@@ -34,24 +34,24 @@ class Fertilizer extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("carrot", "Cabbage"),
-                    BuildItemBox("garlic", "Garlic"),
+                    buildItemBox("carrot", "Cabbage"),
+                    buildItemBox("garlic", "Garlic"),
                   ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("red-onion", "Red Onion"),
-                    BuildItemBox("banana", "Banana"),
+                    buildItemBox("red-onion", "Red Onion"),
+                    buildItemBox("banana", "Banana"),
                   ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("cabbage", "Cabbage"),
-                    BuildItemBox("potato", "Potato"),
+                    buildItemBox("cabbage", "Cabbage"),
+                    buildItemBox("potato", "Potato"),
                   ],
                 ),
               ],
@@ -62,7 +62,7 @@ class Fertilizer extends StatelessWidget {
     );
   }
 
-  Column BuildItemBox(String image, String emName) {
+  Column buildItemBox(String image, String emName) {
     return Column(
       children: [
         ItemCard(

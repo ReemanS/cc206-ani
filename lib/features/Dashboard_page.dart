@@ -1,6 +1,8 @@
 import 'package:cc206_ani/components/clouds.dart';
 import 'package:flutter/material.dart';
 
+import '../components/dashboard_end_drawer.dart';
+
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
@@ -55,59 +57,7 @@ class _DashboardState extends State<Dashboard> {
           ),
         ],
       ),
-      endDrawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(167, 76, 175, 79),
-              ),
-              child: Center(
-                child: Text(
-                  'Welcome!',
-                  style: TextStyle(
-                      fontSize: 30, color: Colors.white, fontFamily: "Poppins"),
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                "Available Features:",
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text('Marketplace',
-                  style: TextStyle(fontFamily: "Poppins")),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/marketplace');
-              },
-            ),
-            ListTile(
-              title: const Text('Analytics',
-                  style: TextStyle(fontFamily: "Poppins")),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/analytics');
-              },
-            ),
-            ListTile(
-              title: const Text('Chat Bot',
-                  style: TextStyle(fontFamily: "Poppins")),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/chatbot');
-              },
-            ),
-          ],
-        ),
-      ),
+      endDrawer: const DashboardEndDrawer(),
       body: Center(
         child: ListView(
           children: [
@@ -134,7 +84,6 @@ class _DashboardState extends State<Dashboard> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Text and Cloud widget on the left side
                               const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -149,7 +98,7 @@ class _DashboardState extends State<Dashboard> {
                                   Row(
                                     children: [
                                       Text(
-                                        'Elon Mah',
+                                        'John Doe',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 48,
@@ -275,23 +224,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       InkWell(
                         onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Container(
-                                height: 200,
-                                child: const Center(
-                                  child: Text(
-                                    'Sorry! This feature is not available yet.',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontFamily: "Poppins",
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          );
+                          Navigator.pushNamed(context, "/Journal");
                         },
                         child: Container(
                           width: 100,
