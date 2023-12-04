@@ -65,7 +65,6 @@ class _Chatbot_State extends State<Chatbot> {
         body: Column(
           children: [
             Expanded (
-              child: Flexible(
                 child: Container(
                 margin: const EdgeInsets.all(3.0),
                 child: ListView.builder(
@@ -119,7 +118,6 @@ class _Chatbot_State extends State<Chatbot> {
                     );
                   },
                 ),
-              ),
               ),
             ),
             Container(
