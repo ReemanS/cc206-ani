@@ -53,18 +53,31 @@ class _Marketplace_State extends State<Marketplace> {
               ],
             ),
             bottom: const TabBar(
+              indicatorColor: Color.fromRGBO(76, 175, 80, 1),
               tabs: [
-                Text(
-                  "Crops",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Crops",
+                    style:
+                        TextStyle(color: Colors.black, fontFamily: "Poppins"),
+                  ),
                 ),
-                Text(
-                  "Fertilizers",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Fertilizers",
+                    style:
+                        TextStyle(color: Colors.black, fontFamily: "Poppins"),
+                  ),
                 ),
-                Text(
-                  "Seeds",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Seeds",
+                    style:
+                        TextStyle(color: Colors.black, fontFamily: "Poppins"),
+                  ),
                 )
               ],
             ),
