@@ -5,7 +5,7 @@ class Seeds extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -34,24 +34,24 @@ class Seeds extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("carrot", "Cabbage"),
-                    BuildItemBox("garlic", "Garlic"),
+                    buildItemBox("carrot", "Cabbage"),
+                    buildItemBox("garlic", "Garlic"),
                   ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("red-onion", "Red Onion"),
-                    BuildItemBox("banana", "Banana"),
+                    buildItemBox("red-onion", "Red Onion"),
+                    buildItemBox("banana", "Banana"),
                   ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BuildItemBox("cabbage", "Cabbage"),
-                    BuildItemBox("potato", "Potato"),
+                    buildItemBox("cabbage", "Cabbage"),
+                    buildItemBox("potato", "Potato"),
                   ],
                 ),
               ],
@@ -62,7 +62,7 @@ class Seeds extends StatelessWidget {
     );
   }
 
-  Column BuildItemBox(String image, String emName) {
+  Column buildItemBox(String image, String emName) {
     return Column(
       children: [
         ItemCard(
@@ -71,7 +71,7 @@ class Seeds extends StatelessWidget {
         ),
         Text(
           emName,
-          style: TextStyle(
+          style: const TextStyle(
             fontFamily: 'Poppins',
             fontSize: 16,
             fontWeight: FontWeight.bold,

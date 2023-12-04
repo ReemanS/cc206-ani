@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Chatbot extends StatefulWidget {
-  const Chatbot({Key? key}) : super(key: key);
+class Journal extends StatefulWidget {
+  const Journal({Key? key}) : super(key: key);
 
   @override
-  State<Chatbot> createState() => ChatbotState();
+  State<Journal> createState() => JournalState();
 }
 
-class ChatbotState extends State<Chatbot> {
+class JournalState extends State<Journal> {
   final TextEditingController _messageController = TextEditingController();
   final List<Map<String, dynamic>> _messages = [];
 
@@ -41,7 +41,7 @@ class ChatbotState extends State<Chatbot> {
               ),
               const SizedBox(width: 5),
               const Text(
-                "Chatbot",
+                "Journal",
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   color: Colors.black,
@@ -51,17 +51,70 @@ class ChatbotState extends State<Chatbot> {
             ],
           ),
           actions: [
-            InkWell(
-              onTap: () {},
-              child: const Padding(
-                padding: EdgeInsets.only(right: 16.0),
-                child: Icon(
-                  Icons.history,
-                  color: Colors.black54,
+            Builder(
+              builder: (context) => InkWell(
+                onTap: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 16.0),
+                  child: Icon(
+                    Icons.menu,
+                    color: Colors.black54,
+                  ),
                 ),
               ),
             ),
           ],
+        ),
+        endDrawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: const BoxDecoration(
+                  color: Colors.green,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      "assets/images/app-logo.png",
+                      width: 50,
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "Journal",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                title: const Text('Page 1'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(
+                    context,
+                    "/Journal",
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Page 2'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(
+                    context,
+                    "/Journal",
+                  );
+                },
+              ),
+            ],
+          ),
         ),
         body: Column(
           children: [
@@ -73,47 +126,26 @@ class ChatbotState extends State<Chatbot> {
                   itemBuilder: (context, index) {
                     final message = _messages[index]['message'];
                     final isSent = _messages[index]['isSent'];
-
                     return ListTile(
                       title: Row(
-                        mainAxisAlignment: isSent
-                            ? MainAxisAlignment.end
-                            : MainAxisAlignment.start,
                         children: [
                           Container(
                             margin: const EdgeInsets.only(
                               left: 10.0,
                               right: 10.0,
-                              top: 5.0,
-                              bottom: 5.0,
                             ),
-                            padding: const EdgeInsets.all(12.0),
                             constraints: BoxConstraints(
-                              maxWidth: MediaQuery.of(context).size.width * 0.5,
-                            ),
-                            decoration: BoxDecoration(
-                              color: isSent ? Colors.green : Colors.white,
-                              borderRadius: BorderRadius.circular(10.0),
+                              maxWidth: MediaQuery.of(context).size.width * 0.8,
                             ),
                             child: Text(
                               message,
-                              style: TextStyle(
-                                color: isSent ? Colors.white : Colors.black,
+                              style: const TextStyle(
+                                color: Colors.black,
                                 fontFamily: "Poppins",
                               ),
-                              textAlign:
-                                  isSent ? TextAlign.right : TextAlign.left,
-                              softWrap: true,
+                              textAlign: TextAlign.left,
                             ),
                           ),
-                          if (isSent)
-                            SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: Image.asset(
-                                'assets/images/app-logo.png',
-                              ),
-                            ),
                         ],
                       ),
                     );
@@ -122,6 +154,7 @@ class ChatbotState extends State<Chatbot> {
               ),
             ),
             Container(
+              //jimar
               margin: const EdgeInsets.all(8.0),
               child: SizedBox(
                 width: double.infinity,
@@ -140,7 +173,7 @@ class ChatbotState extends State<Chatbot> {
                           child: TextField(
                             controller: _messageController,
                             decoration: const InputDecoration(
-                              hintText: "Talk to Farmer's Chatbot",
+                              hintText: "Insert Content Here",
                             ),
                           ),
                         ),
