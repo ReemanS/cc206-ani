@@ -51,8 +51,7 @@ class _Chatbot_State extends State<Chatbot> {
           ),
           actions: [
             InkWell(
-              onTap: () {
-              },
+              onTap: () {},
               child: const Padding(
                 padding: EdgeInsets.only(right: 16.0),
                 child: Icon(
@@ -80,31 +79,30 @@ class _Chatbot_State extends State<Chatbot> {
                             ? MainAxisAlignment.end
                             : MainAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.only(
-                                left: 10.0,
-                                right: 10.0,
-                                top: 5.0,
-                                bottom: 5.0,
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 10.0,
+                              right: 10.0,
+                              top: 5.0,
+                              bottom: 5.0,
+                            ),
+                            padding: const EdgeInsets.all(12.0),
+                            decoration: BoxDecoration(
+                              color: isSent ? Colors.green : Colors.white,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Text(
+                              message,
+                              style: TextStyle(
+                                color: isSent ? Colors.white : Colors.black,
+                                fontFamily: "Poppins",
                               ),
-                              padding: const EdgeInsets.all(12.0),
-                              decoration: BoxDecoration(
-                                color: isSent ? Colors.green : Colors.white,
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              child: Text(
-                                message,
-                                style: TextStyle(
-                                  color: isSent ? Colors.white : Colors.black,
-                                ),
-                                textAlign:
-                                    isSent ? TextAlign.right : TextAlign.left,
-                              ),
+                              textAlign:
+                                  isSent ? TextAlign.right : TextAlign.left,
                             ),
                           ),
                           if (isSent)
-                            Container(
+                            SizedBox(
                               width: 50,
                               height: 50,
                               child: Image.asset(
@@ -118,7 +116,6 @@ class _Chatbot_State extends State<Chatbot> {
                 ),
               ),
             ),
-            // Input area
             Container(
               margin: const EdgeInsets.all(8.0),
               child: SizedBox(
@@ -176,8 +173,7 @@ class _Chatbot_State extends State<Chatbot> {
       setState(() {
         _messages.add({'message': message, 'isSent': isSent});
         _messageController.clear();
-        }
-      );
+      });
     }
   }
 }

@@ -1,8 +1,5 @@
 import 'package:cc206_ani/components/clouds.dart';
 import 'package:flutter/material.dart';
-import 'marketplace.dart';
-import 'analytics_page.dart';
-import 'chat_page.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
