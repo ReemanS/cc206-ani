@@ -125,7 +125,7 @@ class JournalState extends State<Journal> {
                   itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     final message = _messages[index]['message'];
-
+                    final isSent = _messages[index]['isSent'];
                     return ListTile(
                       title: Row(
                         children: [
